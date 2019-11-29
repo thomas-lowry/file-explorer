@@ -1,0 +1,1151 @@
+<style>
+
+/* Figma Plugin DS */
+
+* {
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+/*  Typography */
+@font-face {
+	font-family: 'Inter';
+	font-style: normal;
+	font-weight: 400;
+	src: url("https://rsms.me/inter/font-files/Inter-Regular.woff2?v=3.7") format("woff2"), url("https://rsms.me/inter/font-files/Inter-Regular.woff?v=3.7") format("woff");
+}
+
+@font-face {
+	font-family: 'Inter';
+	font-style: normal;
+	font-weight: 500;
+	src: url("https://rsms.me/inter/font-files/Inter-Medium.woff2?v=3.7") format("woff2"), url("https://rsms.me/inter/font-files/Inter-Medium.woff2?v=3.7") format("woff");
+}
+
+@font-face {
+	font-family: 'Inter';
+	font-style: normal;
+	font-weight: 600;
+	src: url("https://rsms.me/inter/font-files/Inter-SemiBold.woff2?v=3.7") format("woff2"), url("https://rsms.me/inter/font-files/Inter-SemiBold.woff2?v=3.7") format("woff");
+}
+
+.label {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-align: center;
+			-ms-flex-align: center;
+					align-items: center;
+	height: 32px;
+	padding: 8px 4px 8px 8px;
+	cursor: default;
+	color: rgba(0, 0, 0, 0.3);
+	background-color: #ffffff;
+	font-family: "Inter", sans-serif;
+	font-weight: 400;
+	font-size: 11px;
+	line-height: 16px;
+	letter-spacing: 0.005em;
+}
+
+.section-title {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-align: center;
+			-ms-flex-align: center;
+					align-items: center;
+	height: 32px;
+	padding: 8px 4px 8px 8px;
+	cursor: default;
+	color: rgba(0, 0, 0, 0.8);
+	background-color: #ffffff;
+	font-family: "Inter", sans-serif;
+	font-weight: 600;
+	font-size: 11px;
+	line-height: 16px;
+	letter-spacing: 0.005em;
+}
+
+.type--pos-small-normal {
+	font-family: "Inter", sans-serif;
+	font-weight: 400;
+	font-size: 11px;
+	line-height: 16px;
+	letter-spacing: 0.005em;
+}
+
+.type--pos-small-medium {
+	font-family: "Inter", sans-serif;
+	font-weight: 500;
+	font-size: 11px;
+	line-height: 16px;
+	letter-spacing: 0.005em;
+}
+
+.type--pos-small-bold {
+	font-family: "Inter", sans-serif;
+	font-weight: 600;
+	font-size: 11px;
+	line-height: 16px;
+	letter-spacing: 0.005em;
+}
+
+.type--pos-medium-normal {
+	font-family: "Inter", sans-serif;
+	font-weight: 400;
+	font-size: 12px;
+	line-height: 16px;
+	letter-spacing: 0;
+}
+
+.type--pos-medium-medium {
+	font-family: "Inter", sans-serif;
+	font-weight: 500;
+	font-size: 12px;
+	line-height: 16px;
+	letter-spacing: 0;
+}
+
+.type--pos-medium-bold {
+	font-family: "Inter", sans-serif;
+	font-weight: 600;
+	font-size: 12px;
+	line-height: 16px;
+	letter-spacing: 0;
+}
+
+.type--pos-large-normal {
+	font-family: "Inter", sans-serif;
+	font-weight: 400;
+	font-size: 13px;
+	line-height: 24px;
+	letter-spacing: -0.001em;
+}
+
+.type--pos-large-medium {
+	font-family: "Inter", sans-serif;
+	font-weight: 500;
+	font-size: 13px;
+	line-height: 24px;
+	letter-spacing: -0.001em;
+}
+
+.type--pos-large-bold {
+	font-family: "Inter", sans-serif;
+	font-weight: 600;
+	font-size: 13px;
+	line-height: 24px;
+	letter-spacing: -0.001em;
+}
+
+.type--pos-xlarge-normal {
+	font-family: "Inter", sans-serif;
+	font-weight: 400;
+	font-size: 14px;
+	line-height: 24px;
+	letter-spacing: -0.001em;
+}
+
+.type--pos-xlarge-medium {
+	font-family: "Inter", sans-serif;
+	font-weight: 500;
+	font-size: 14px;
+	line-height: 24px;
+	letter-spacing: -0.001em;
+}
+
+.type--pos-xlarge-bold {
+	font-family: "Inter", sans-serif;
+	font-weight: 600;
+	font-size: 14px;
+	line-height: 24px;
+	letter-spacing: -0.001em;
+}
+
+.type--figma-black {
+	color: #000000;
+}
+
+.type--figma-black-3 {
+	color: rgba(0, 0, 0, 0.3);
+}
+
+.type--figma-black-8 {
+	color: rgba(0, 0, 0, 0.8);
+}
+
+.type--neg-small-normal {
+	font-family: "Inter", sans-serif;
+	font-weight: 400;
+	font-size: 11px;
+	line-height: 16px;
+	letter-spacing: 0.01em;
+}
+
+.type--neg-small-medium {
+	font-family: "Inter", sans-serif;
+	font-weight: 500;
+	font-size: 11px;
+	line-height: 16px;
+	letter-spacing: 0.01em;
+}
+
+.type--neg-small-bold {
+	font-family: "Inter", sans-serif;
+	font-weight: 600;
+	font-size: 11px;
+	line-height: 16px;
+	letter-spacing: 0.01em;
+}
+
+.type--neg-medium-normal {
+	font-family: "Inter", sans-serif;
+	font-weight: 400;
+	font-size: 12px;
+	line-height: 16px;
+	letter-spacing: 0.005em;
+}
+
+.type--neg-medium-medium {
+	font-family: "Inter", sans-serif;
+	font-weight: 500;
+	font-size: 12px;
+	line-height: 16px;
+	letter-spacing: 0.005em;
+}
+
+.type--neg-medium-bold {
+	font-family: "Inter", sans-serif;
+	font-weight: 600;
+	font-size: 12px;
+	line-height: 16px;
+	letter-spacing: 0.005em;
+}
+
+.type--neg-large-normal {
+	font-family: "Inter", sans-serif;
+	font-weight: 400;
+	font-size: 13px;
+	line-height: 24px;
+	letter-spacing: -0.001em;
+}
+
+.type--neg-large-medium {
+	font-family: "Inter", sans-serif;
+	font-weight: 500;
+	font-size: 13px;
+	line-height: 24px;
+	letter-spacing: -0.001em;
+}
+
+.type--neg-large-bold {
+	font-family: "Inter", sans-serif;
+	font-weight: 600;
+	font-size: 13px;
+	line-height: 24px;
+	letter-spacing: -0.001em;
+}
+
+.type--neg-xlarge-normal {
+	font-family: "Inter", sans-serif;
+	font-weight: 400;
+	font-size: 14px;
+	line-height: 24px;
+	letter-spacing: -0.001em;
+}
+
+.type--neg-xlarge-medium {
+	font-family: "Inter", sans-serif;
+	font-weight: 500;
+	font-size: 14px;
+	line-height: 24px;
+	letter-spacing: -0.001em;
+}
+
+.type--neg-xlarge-bold {
+	font-family: "Inter", sans-serif;
+	font-weight: 600;
+	font-size: 14px;
+	line-height: 24px;
+	letter-spacing: -0.001em;
+}
+
+.type--figma-white {
+	color: #ffffff;
+}
+
+.type--figma-white-4 {
+	color: rgba(255, 255, 255, 0.4);
+}
+
+.type--figma-white-8 {
+	color: rgba(255, 255, 255, 0.8);
+}
+
+.button {
+	display: inline-block;
+	-ms-flex-negative: 0;
+			flex-shrink: 0;
+	margin: 1px 0 1px 0;
+	padding: 5px 16px 5px 16px;
+	text-decoration: none;
+	border: 2px solid transparent;
+	border-radius: 6px;
+	outline: none;
+}
+
+.button--primary {
+	font-family: "Inter", sans-serif;
+	font-weight: 500;
+	font-size: 11px;
+	line-height: 16px;
+	letter-spacing: 0.01em;
+	color: #ffffff;
+	background-color: #18a0fb;
+}
+
+.button--primary:enabled:active {
+	border: 2px solid rgba(0, 0, 0, 0.3);
+}
+
+.button--primary:disabled {
+	background-color: rgba(0, 0, 0, 0.3);
+}
+
+.button--primary-destructive {
+	font-family: "Inter", sans-serif;
+	font-weight: 500;
+	font-size: 11px;
+	line-height: 16px;
+	letter-spacing: 0.01em;
+	color: #ffffff;
+	background-color: #f24822;
+}
+
+.button--primary-destructive:enabled:active {
+	border: 2px solid rgba(0, 0, 0, 0.3);
+}
+
+.button--primary-destructive:disabled {
+	opacity: 0.4;
+}
+
+.button--secondary {
+	font-family: "Inter", sans-serif;
+	font-weight: 500;
+	font-size: 11px;
+	line-height: 16px;
+	letter-spacing: 0.005em;
+	color: rgba(0, 0, 0, 0.8);
+	border: 1px solid rgba(0, 0, 0, 0.8);
+	background-color: #ffffff;
+}
+
+.button--secondary:enabled:active {
+	padding: 4px 15px 4px 15px;
+	border: 2px solid #18a0fb;
+}
+
+.button--secondary:disabled {
+	color: rgba(0, 0, 0, 0.3);
+	border: 1px solid rgba(0, 0, 0, 0.3);
+}
+
+.button--secondary-destructive {
+	font-family: "Inter", sans-serif;
+	font-weight: 500;
+	font-size: 11px;
+	line-height: 16px;
+	letter-spacing: 0.005em;
+	color: #f24822;
+	border: 1px solid #f24822;
+	background-color: #ffffff;
+}
+
+.button--secondary-destructive:enabled:active {
+	padding: 4px 15px 4px 15px;
+	border: 2px solid #f24822;
+}
+
+.button--secondary-destructive:disabled {
+	opacity: 0.4;
+}
+
+.button--margin-right {
+	margin-right: 8px;
+}
+
+.checkbox {
+	font-family: "Inter", sans-serif;
+	font-weight: 400;
+	font-size: 11px;
+	line-height: 16px;
+	letter-spacing: 0.005em;
+	position: relative;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-align: center;
+			-ms-flex-align: center;
+					align-items: center;
+	-webkit-box-orient: horizontal;
+	-webkit-box-direction: normal;
+			-ms-flex-direction: row;
+					flex-direction: row;
+	height: 32px;
+	cursor: default;
+}
+
+.checkbox__box {
+	display: none;
+}
+
+.checkbox__box:checked + label:before {
+	border: 1px solid #18a0fb;
+	background-color: #18a0fb;
+	background-image: url("data:image/svg+xml;utf8,%3Csvg%20fill%3D%22none%22%20height%3D%227%22%20viewBox%3D%220%200%208%207%22%20width%3D%228%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20clip-rule%3D%22evenodd%22%20d%3D%22m1.17647%201.88236%201.88235%201.88236%203.76471-3.76472%201.17647%201.17648-4.94118%204.9412-3.05882-3.05884z%22%20fill%3D%22%23fff%22%20fill-rule%3D%22evenodd%22%2F%3E%3C%2Fsvg%3E");
+	background-repeat: no-repeat;
+	background-position: 1px 2px;
+}
+
+.checkbox__box:disabled + label {
+	opacity: 0.3;
+}
+
+.checkbox__box:checked:disabled + label:before {
+	border: 1px solid rgba(0, 0, 0, 0.8);
+	background-color: rgba(0, 0, 0, 0.8);
+}
+
+.checkbox__label {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	width: 100%;
+	-webkit-user-select: none;
+		 -moz-user-select: none;
+			-ms-user-select: none;
+					user-select: none;
+}
+
+.checkbox__label:before {
+	display: block;
+	width: 10px;
+	height: 10px;
+	margin: 2px 10px 0 10px;
+	content: '';
+	border: 1px solid rgba(0, 0, 0, 0.8);
+	border-radius: 2px;
+}
+
+
+
+/* custom CSS for this plugin */
+
+body { margin: 0; height: 100%; width: 100%;}
+
+.plugin-container {
+		width: 100%;
+		height: 100%;
+		display: flex;
+		flex-direction: column;
+}
+
+/* list items */
+.item {
+		width: 100%;
+		height: 32px;
+		padding: 0 10px 0 14px;
+		display: flex;
+		flex-direction: row;
+}
+
+.item__icon {
+		width: 16px;
+		height: 16px;
+		margin-right: 16px;
+}
+
+.item__pager {
+		display: block;
+
+}
+
+
+/* Tab control */
+.nav {
+		width: 100%;
+		height: 40px;
+		border-bottom: 1px solid #e5e5e5;
+		position: relative;
+		overflow: hidden;
+		display: flex;
+		align-items: center;
+		padding: 0 16px 0 16px;
+		flex-shrink: 0;
+}
+
+.tab-control {
+		margin: 0;
+		padding: 0;
+		display: flex;
+}
+
+.tab-control__item {
+		display: flex;
+		align-items: center;
+		height: 100%;
+		font-family: Inter;
+		font-style: normal;
+		font-weight: 400;
+		font-size:11px;
+		color: rgba(0,0,0,0.3);
+		margin-right: 14px;
+		padding-right: 0.5px;
+		cursor: default;
+		flex-shrink: 0;
+}
+
+.tab-control__item:hover {
+		color: rgba(0,0,0,0.8);
+}
+
+.tab-control__item--selected {
+		color: rgba(0,0,0,0.8);
+		font-weight: 600;
+		padding-right: 0px;
+		letter-spacing: -0.15px;
+}
+.tab-control--hidden {
+		display: none;
+}
+
+
+/* tab wrapper */
+.tab-content-wrapper {
+		width: 100%;
+		flex: 1;
+		overflow: hidden;
+		display: flex;
+		flex-direction: row;
+}
+
+.tab-content {
+		width: 100%;
+		height: 100%;
+		flex-shrink: 0;
+		display: flex;
+		flex-direction: column;
+}
+
+
+/* table header */
+.table-header {
+	width: 100%;
+	height: 40px;
+	border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+	background-color: #FCFCFC;
+	display: flex;
+	padding: 0 16px 0 16px;
+	align-items: center;
+	justify-content: space-between;
+	cursor: default;
+	position: relative;
+}
+
+.table-header__name {
+	flex: 1;
+}
+
+.table-header__count {
+	width: 76px;
+	padding-left: 6px;
+}
+
+.table-header__text {
+	position: relative;
+	display: inline-block;
+	user-select: none;
+}
+
+.table-header__text:hover {
+	color: rgba(0, 0, 0, 0.8);
+}
+
+.table-header__text--sorted {
+	color: rgba(0, 0, 0, 0.8);
+}
+
+.table-header__text--sorted-dsc:after {
+	display: inline-block;
+	content: ' ';
+	margin-left: 4px;
+	width: 6px;
+	height: 6px;
+	background-image: url('data:image/svg+xml,%3Csvg width="6" height="4" viewBox="0 0 6 4" fill="none" xmlns="http://www.w3.org/2000/svg"%3E%3Cpath d="M3 4L6 2.62268e-07L0 0L3 4Z" fill="black" fill-opacity="0.8"/%3E%3C/svg%3E%0A');
+	background-repeat: no-repeat;
+	background-position: center top;
+}
+.table-header__text--sorted-asc:after {
+	display: inline-block;
+	content: ' ';
+	margin-left: 4px;
+	width: 6px;
+	height: 6px;
+	background-image: url('data:image/svg+xml,%3Csvg width="6" height="4" viewBox="0 0 6 4" fill="none" xmlns="http://www.w3.org/2000/svg"%3E%3Cpath d="M3 -2.62268e-07L0 4L6 4L3 -2.62268e-07Z" fill="black" fill-opacity="0.8"/%3E%3C/svg%3E%0A');
+	background-repeat: no-repeat;
+	background-position: center top;
+}
+
+/* table content */
+.table-content {
+	flex: 1;
+	overflow-y: auto;
+	display: flex;
+	flex-direction: column;
+	padding-top: 8px;
+}
+
+/* table footer */
+.table-footer {
+	width: 100%;
+	height: 40px;
+	border-top: 1px solid rgba(0, 0, 0, 0.1);
+	display: flex;
+	align-items: center;
+	padding: 0 0 0 8px;
+}
+
+
+/* data rows */
+.row {
+	width: 100%;
+	height: 32px;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	padding: 0 12px 0 10px;
+	overflow: hidden;
+}
+
+.row:hover {
+	background-color: rgba(0, 0, 0, 0.03);
+}
+
+
+.row--selected .row__info {
+	margin-top: -32px;
+}
+
+
+.row--selected {
+	background-color: #EDF5FA;
+}
+.row--selected:hover {
+	background-color: #EDF5FA;
+}
+
+.row__left {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	flex: 1;
+	margin-right: 8px;
+}
+
+	.row__icon {
+		width: 24px;
+		height: 24px;
+		margin-right: 8px;
+		flex-shrink: 0;
+	}
+
+	.row__icon--component {
+		background-image: url('data:image/svg+xml,%3Csvg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"%3E%3Cpath d="M12 6L6 12L12 18L18 12L12 6Z" stroke="%237B61FF" stroke-linecap="square"/%3E%3C/svg%3E');
+		background-repeat: no-repeat;
+	}
+
+	.row__name {
+		font-family: "Inter", sans-serif;
+		font-weight: 400;
+		font-size: 11px;
+		line-height: 16px;
+		letter-spacing: 0.005em;
+		color: rgba(0, 0, 0, 0.8);
+		flex: 1;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		user-select: none;
+	}
+
+
+
+	
+.row__right {
+	width: 80px;
+	flex-direction: column;
+	height: 32px;
+}
+
+	.row__info {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		padding-left: 6px;
+		height: 32px;
+		flex-shrink: 0;
+		transition-property: margin-top;
+		transition-timing-function: ease-out;
+		transition-duration: 0.2s;
+	}
+
+		.row__count {
+			font-family: "Inter", sans-serif;
+			font-weight: 400;
+			font-size: 11px;
+			line-height: 16px;
+			letter-spacing: 0.005em;
+			color: rgba(0, 0, 0, 0.3);
+			font-feature-settings: "tnum";
+			width: 32px;
+			text-align: right;
+			user-select: none;
+		}
+
+		.row__source {
+			width: 24px;
+			height: 24px;
+			display: block;
+			background-repeat: no-repeat;
+		}
+
+		.row__source--local {
+			background-image: url('data:image/svg+xml,%3C%3Fxml version="1.0" encoding="UTF-8"%3F%3E%3Csvg fill="none" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"%3E%3Cpath d="M12 11V7H8V17H16V11H12ZM17 10V18H7V6H13L17 10ZM13 7.41421L15.5858 10H13V7.41421Z" clip-rule="evenodd" fill="%23000" fill-opacity=".3" fill-rule="evenodd"/%3E%3C/svg%3E%0A');
+		}
+
+		.row__source--library {
+			background-image: url('data:image/svg+xml,%3Csvg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"%3E%3Cpath fill-rule="evenodd" clip-rule="evenodd" d="M12 8.86803L11.951 8.83582C10.3996 7.81672 9.52252 7.46088 8.74856 7.4613C8.05273 7.46169 7.27488 7.75004 6 8.54657V16.1998C6.9726 15.6754 7.88731 15.3738 8.85216 15.3932C9.91488 15.4146 10.9156 15.824 12 16.4794V8.86803ZM12 17.6624C9.60268 16.0893 8.30146 15.968 6 17.3517C5.97014 17.3696 5.94011 17.3878 5.9099 17.4063C5.70823 17.5296 5.49884 17.6641 5.28038 17.81C5.24011 17.8369 5.19952 17.8642 5.15862 17.8919C5.09194 17.937 5 17.8905 5 17.81V8.00002C8.12154 5.9508 9.37315 5.946 12.5 8.00002C15.6268 5.946 16.8785 5.9508 20 8.00002V17.81C20 17.8905 19.9083 17.9372 19.8415 17.8923C19.8002 17.8645 19.7592 17.8371 19.7185 17.81C19.5001 17.6649 19.2909 17.531 19.0894 17.4083C19.0594 17.3901 19.0296 17.372 19 17.3543C16.6871 15.9679 15.3972 16.0884 13 17.6623C12.8386 17.7683 12.6721 17.8809 12.5 18C12.3279 17.8809 12.1615 17.7684 12 17.6624ZM13 16.479V8.86803L13.049 8.83582C14.6004 7.81672 15.4775 7.46088 16.2514 7.4613C16.9473 7.46169 17.7251 7.75004 19 8.54657V16.2029C18.0231 15.6768 17.107 15.3738 16.1417 15.3932C15.0804 15.4146 14.0824 15.8241 13 16.479Z" fill="black" fill-opacity="0.3"/%3E%3C/svg%3E%0A');
+		}
+
+	.row__controls {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		height: 32px;
+		flex-shrink: 0;
+	}
+
+.row__pager {
+	display: flex;
+}
+
+.row__button {
+	width: 24px;
+	height: 24px;
+	background-repeat: no-repeat;
+	border-radius: 3px;
+	background-position: center top;
+}
+
+.row__button:hover {
+	background-color: rgba(0, 0, 0, 0.1);
+}
+
+.row--selected .row__button:hover {
+	background-color: #DAEBF7;
+}
+
+.row--selected .row__button:active {
+	background-color: #18a0fb;
+	background-position: center bottom;
+}
+
+.row__button--next {
+	background-image: url('data:image/svg+xml,%3Csvg width="24" height="48" viewBox="0 0 24 48" fill="none" xmlns="http://www.w3.org/2000/svg"%3E%3Cpath d="M14 12L10 9L10 15L14 12Z" fill="black" fill-opacity="0.8"/%3E%3Cpath d="M14 36L10 33L10 39L14 36Z" fill="white"/%3E%3C/svg%3E');
+}
+
+.row__button--prev {
+	background-image: url('data:image/svg+xml,%3Csvg width="24" height="48" viewBox="0 0 24 48" fill="none" xmlns="http://www.w3.org/2000/svg"%3E%3Cpath d="M10 12L14 9L14 15L10 12Z" fill="black" fill-opacity="0.8"/%3E%3Cpath d="M10 36L14 33L14 39L10 36Z" fill="white"/%3E%3C/svg%3E%0A');
+}
+
+.row__button--instance {
+	background-image: url('data:image/svg+xml,%3Csvg width="24" height="48" viewBox="0 0 24 48" fill="none" xmlns="http://www.w3.org/2000/svg"%3E%3Cpath d="M5 9.2V5H9.2V6H6V9.2H5Z" fill="black" fill-opacity="0.8"/%3E%3Cpath d="M19 9.2V5H14.8V6H18V9.2H19Z" fill="black" fill-opacity="0.8"/%3E%3Cpath d="M19 14.8H18V18H14.8V19H19V14.8Z" fill="black" fill-opacity="0.8"/%3E%3Cpath d="M9.2 19V18H6V14.8H5V19H9.2Z" fill="black" fill-opacity="0.8"/%3E%3Cpath d="M10 9L7 12L10 15L11.2352 13.7648L10.5281 13.0577L10 13.5858L8.41421 12L10 10.4142L10.5281 10.9423L11.2352 10.2352L10 9Z" fill="black" fill-opacity="0.8"/%3E%3Cpath fill-rule="evenodd" clip-rule="evenodd" d="M14 9L11 12L14 15L17 12L14 9ZM14 13.5858L12.4142 12L14 10.4142L15.5858 12L14 13.5858Z" fill="black" fill-opacity="0.8"/%3E%3Cpath d="M5 33.2V29H9.2V30H6V33.2H5Z" fill="white"/%3E%3Cpath d="M19 33.2V29H14.8V30H18V33.2H19Z" fill="white"/%3E%3Cpath d="M19 38.8H18V42H14.8V43H19V38.8Z" fill="white"/%3E%3Cpath d="M9.2 43V42H6V38.8H5V43H9.2Z" fill="white"/%3E%3Cpath d="M10 33L7 36L10 39L11.2352 37.7648L10.5281 37.0577L10 37.5858L8.41421 36L10 34.4142L10.5281 34.9423L11.2352 34.2352L10 33Z" fill="white"/%3E%3Cpath fill-rule="evenodd" clip-rule="evenodd" d="M14 33L11 36L14 39L17 36L14 33ZM14 37.5858L12.4142 36L14 34.4142L15.5858 36L14 37.5858Z" fill="white"/%3E%3C/svg%3E%0A');
+}
+
+.row__button--style {
+	background-image: url('data:image/svg+xml,background-image: url("data:image/svg+xml,%253Csvg width="24" height="48" viewBox="0 0 24 48" fill="none" xmlns="http://www.w3.org/2000/svg"%253E%253Cpath fill-rule="evenodd" clip-rule="evenodd" d="M5 9.2V5H9.2V6H6V9.2H5ZM19 9.2V5H14.8V6H18V9.2H19ZM19 14.8H18V18H14.8V19H19V14.8ZM9.2 19V18H6V14.8H5V19H9.2Z" fill="black" fill-opacity="0.8"/%253E%253Cpath d="M10 11C10.5523 11 11 10.5523 11 10C11 9.44772 10.5523 9 10 9C9.44772 9 9 9.44772 9 10C9 10.5523 9.44772 11 10 11Z" fill="black" fill-opacity="0.8"/%253E%253Cpath d="M10 15C10.5523 15 11 14.5523 11 14C11 13.4477 10.5523 13 10 13C9.44772 13 9 13.4477 9 14C9 14.5523 9.44772 15 10 15Z" fill="black" fill-opacity="0.8"/%253E%253Cpath d="M15 14C15 14.5523 14.5523 15 14 15C13.4477 15 13 14.5523 13 14C13 13.4477 13.4477 13 14 13C14.5523 13 15 13.4477 15 14Z" fill="black" fill-opacity="0.8"/%253E%253Cpath d="M14 11C14.5523 11 15 10.5523 15 10C15 9.44772 14.5523 9 14 9C13.4477 9 13 9.44772 13 10C13 10.5523 13.4477 11 14 11Z" fill="black" fill-opacity="0.8"/%253E%253Cpath fill-rule="evenodd" clip-rule="evenodd" d="M5 33.2V29H9.2V30H6V33.2H5ZM19 33.2V29H14.8V30H18V33.2H19ZM19 38.8H18V42H14.8V43H19V38.8ZM9.2 43V42H6V38.8H5V43H9.2Z" fill="white"/%253E%253Cpath d="M10 35C10.5523 35 11 34.5523 11 34C11 33.4477 10.5523 33 10 33C9.44772 33 9 33.4477 9 34C9 34.5523 9.44772 35 10 35Z" fill="white"/%253E%253Cpath d="M10 39C10.5523 39 11 38.5523 11 38C11 37.4477 10.5523 37 10 37C9.44772 37 9 37.4477 9 38C9 38.5523 9.44772 39 10 39Z" fill="white"/%253E%253Cpath d="M15 38C15 38.5523 14.5523 39 14 39C13.4477 39 13 38.5523 13 38C13 37.4477 13.4477 37 14 37C14.5523 37 15 37.4477 15 38Z" fill="white"/%253E%253Cpath d="M14 35C14.5523 35 15 34.5523 15 34C15 33.4477 14.5523 33 14 33C13.4477 33 13 33.4477 13 34C13 34.5523 13.4477 35 14 35Z" fill="white"/%253E%253C/svg%253E%250A");');
+}
+
+
+
+/* Utilities */
+.m4 { margin: 4px; }
+.m8 { margin: 8px; }
+.m16 { margin: 16px; }
+
+.p4 { padding: 4px; }
+.p8 { padding: 8px; }
+.p16 { padding: 16px; }
+
+.mb4 { margin-bottom: 4px; }
+.mb8 { margin-bottom: 8px; }
+.mb16 { margin-bottom: 16px; }
+.mb32 { margin-bottom: 32px; }
+
+.pb4 { padding-bottom: 4px; }
+.pb8 { padding-bottom: 8px; }
+.pb16 { padding-bottom: 16px; }
+
+.mt4 { margin-top: 4px; }
+.mt8 { margin-top: 8px; }
+.mt16 { margin-top: 16px; }
+.mt32 { margin-top: 32px; }
+
+.pt4 { padding-top: 4px; }
+.pt8 { padding-top: 8px; }
+.pt16 { padding-top: 16px; }
+
+.mr4 { margin-right: 4px; }
+.mr8 { margin-right: 8px; }
+.mr16 { margin-right: 16px; }
+
+.pr4 { padding-right: 4px; }
+.pr8 { padding-right: 8px; }
+.pr16 { padding-right: 16px; }
+
+.ml4 { margin-left: 4px; }
+.ml8 { margin-left: 8px; }
+.ml16 { margin-left: 16px; }
+
+.pl4 { padding-left: 4px; }
+.pl8 { padding-left: 8px; }
+.pl16 { padding-left: 16px; }
+
+.hidden { display: none; }
+
+</style>
+
+<div class="plugin-container">
+		
+		<!-- Nav -->
+		<nav class='nav'>   
+				<ul id="tabControl" class="tab-control">
+						<li id="tabOverview" class="tab-control__item tab-control__item--selected">Overview</li>
+						<li id="tabComponents" class="tab-control__item">Components</li>
+						<li id="tabComponents" class="tab-control__item">Styles</li>
+				</ul>
+		</nav>
+
+		<!-- Tab content -->
+		<div class="tab-content-wrapper">
+
+				<div id="componentsList" class="tab-content table">
+					
+					<!-- table header -->
+					<div class="table-header">
+						<!-- Name -->
+						<div class="table-header__name">
+							<div class="table-header__text type type--figma-black-3 type--neg-small-normal">Name</div>
+						</div>
+						<div class="table-header__count">
+							<div class="table-header__text table-header__text--sorted type type--figma-black-3 type--neg-small-normal">Count</div>
+						</div>
+					</div>
+
+					<!-- table content -->
+					<div class="table-content">
+
+					</div>
+
+					<!-- table footer -->
+					<div class="table-footer">
+						<div class="label">Show:</div>
+
+						<div class="checkbox table-footer__controls mr8">
+							<input class="checkbox__box" type="checkbox" id="instanceLocal" checked="checked" source="local">
+							<label class="checkbox__label" for="instanceLocal">Local instances</label>
+						</div>
+
+						<div class="checkbox table-footer__controls">
+							<input class="checkbox__box" type="checkbox" id="instancesLibrary" checked="checked" source="library">
+							<label class="checkbox__label" for="instancesLibrary">Library instances</label>
+						</div>
+					</div>
+
+				</div>
+
+
+		</div>
+
+</div> 
+
+
+
+<script>
+
+// Global vars
+const componentsTab = document.getElementById('componentsList');
+const componentList = componentsTab.querySelector('.table-content');
+var componentRows = [];
+var instances;
+
+
+
+
+// TABLE SORTING FUNCTIONS
+const tableHeaders = Array.from(document.getElementsByClassName('table-header__text'));
+const tableFooters = Array.from(document.getElementsByClassName('table-footer__controls'));
+const countHeaders = Array.from(document.getElementsByClassName('table-header__count'));
+
+// function for clicking on header
+var tableHeader = function (event) {
+
+	//vars
+	let items = Array.from(this.parentNode.parentNode.querySelectorAll('.table-header__text'));
+	let parent = this.parentNode.parentNode.parentNode;
+	let rowContainer = parent.querySelector('.table-content')
+	let rows = Array.from(parent.querySelectorAll('.row'));
+	let sortedRows;
+	let direction;
+	let attr;
+
+	//determine attribute
+	if (this.parentNode.classList.contains('table-header__name')) {
+		attr = 'name';
+	} else if (this.parentNode.classList.contains('table-header__count')) {
+		attr = 'count';
+	}
+
+	//determine direction
+	if (this.classList.contains('table-header__text--sorted-dsc')) {
+		direction = 'asc';
+	} else if (this.classList.contains('table-header__text--sorted-asc')) {
+		direction = 'dsc';
+	} else {
+		direction = 'dsc';
+	}
+
+	//selected state
+	items.forEach(item => {
+		item.classList.remove('table-header__text--sorted');
+		item.classList.remove('table-header__text--sorted-asc');
+		item.classList.remove('table-header__text--sorted-dsc');
+	});
+	this.classList.add('table-header__text--sorted');
+
+	// set the indicator
+	if (direction === 'asc') {
+		this.classList.add('table-header__text--sorted-asc');
+	} else if (direction === 'dsc') {
+		this.classList.add('table-header__text--sorted-dsc');
+	}
+
+	//sort the rows
+	if (direction === 'asc') {
+		if (attr === 'count') {
+			sortedRows = rows.sort((a, b) => (parseInt(a.getAttribute(attr)) > parseInt(b.getAttribute(attr))) ? 1 : -1)
+		} else {
+			sortedRows = rows.sort((a, b) => (a.getAttribute(attr) > b.getAttribute(attr)) ? 1 : -1)
+		}
+	} else if (direction === 'dsc') {
+		if (attr === 'count') {
+			sortedRows = rows.sort((a, b) => (parseInt(a.getAttribute(attr)) > parseInt(b.getAttribute(attr))) ? -1 : 1)
+		} else {
+			sortedRows = rows.sort((a, b) => (a.getAttribute(attr) > b.getAttribute(attr)) ? -1 : 1)
+		}
+	}
+
+	sortedRows.forEach(row => {
+		rowContainer.appendChild(row);
+	})
+
+};
+
+// table header click functions
+tableHeaders.forEach(header => {
+	header.addEventListener('click', tableHeader, false);
+});
+
+// table footer sorting functions
+var tableFooter = function (event) {
+	
+	//vars
+	let parent = this.parentNode.parentNode.parentNode;
+	let source = this.getAttribute('source');
+	let status = this.checked;
+
+	let rows = Array.from(parent.querySelectorAll('.row[source="'+ source +'"]'));
+
+	rows.forEach(row => {
+		if (status === false) {
+			row.classList.add('hidden');
+		} else {
+			row.classList.remove('hidden');
+		}
+	});
+}
+
+tableFooters.forEach(checkbox => {
+	let box = checkbox.querySelector('.checkbox__box');
+	box.addEventListener('click', tableFooter, false);
+});
+
+
+// row functions
+var tableRow = function(event) {
+
+	//get list of components
+	componentRows.forEach(row => {
+		row.classList.remove('row--selected');
+	});
+	
+	//add selected state
+	this.classList.add('row--selected');
+	
+	let master = this.getAttribute('master');
+
+	//tell the UI which master is selected
+	parent.postMessage({pluginMessage: {
+		'type': 'selectInstance',
+		'master': master
+	}}, '*');
+}
+
+var pager = function(event) {
+
+	let master = this.parentNode.parentNode.parentNode.parentNode.getAttribute('master');
+	
+	if (this.classList.contains('row__button--prev')) {
+		
+		//tell the UI which master is selected
+		parent.postMessage({pluginMessage: {
+			'type': 'prevInstance',
+			'master': master
+		}}, '*');
+
+	} else {
+
+		//tell the UI which master is selected
+		parent.postMessage({pluginMessage: {
+			'type': 'nextInstance',
+			'master': master
+		}}, '*');
+
+	}
+
+
+}
+
+
+
+// ROW GENERATION
+
+
+function generateInstanceRow(instance) {
+
+	//create the top level row
+	let row = document.createElement('div');
+	row.classList.add('row','row--component');
+	row.setAttribute('name',instance.name);
+	row.setAttribute('count',instance.count);
+	row.setAttribute('source',instance.source);
+	row.setAttribute('master',instance.masterId);
+	componentList.appendChild(row);
+	componentRows.push(row);
+
+	// add event listener to entire row
+	row.addEventListener('click', tableRow, false);
+
+	//created left side
+	let rowLeft = document.createElement('div');
+	rowLeft.classList.add('row__left');
+	row.appendChild(rowLeft);
+
+		//create icon
+		let rowIcon = document.createElement('div');
+		rowIcon.classList.add('row__icon','row__icon--component');
+		rowLeft.appendChild(rowIcon);
+
+		//create name
+		let rowName = document.createElement('div');
+		rowName.classList.add('row__name');
+		rowName.innerText = instance.name;
+		rowLeft.appendChild(rowName);
+
+	//create right side
+	let rowRight = document.createElement('div');
+	rowRight.classList.add('row__right');
+	row.appendChild(rowRight);
+
+		//create the info area
+		let rowInfo = document.createElement('div');
+		rowInfo.classList.add('row__info');
+		rowRight.appendChild(rowInfo);
+
+			//create count
+			let rowCount = document.createElement('div');
+			rowCount.classList.add('row__count');
+			rowCount.innerText = instance.count;
+			rowInfo.appendChild(rowCount);
+
+			//create source
+			let rowSource = document.createElement('div');
+			rowSource.classList.add('row__source','row__source--'+instance.source);
+			rowInfo.appendChild(rowSource);
+			console.log(instance.source);
+
+		//create controls
+		let rowControls = document.createElement('div');
+		rowControls.classList.add('row__controls');
+		rowRight.appendChild(rowControls);
+
+
+			//create pager
+			let rowPager = document.createElement('div');
+			rowPager.classList.add('row__pager');
+			rowControls.appendChild(rowPager);
+
+				//create buttons
+				let pagerPrev = document.createElement('div');
+				let pagerNext = document.createElement('div');
+				pagerPrev.classList.add('row__button','row__button--prev');
+				pagerNext.classList.add('row__button','row__button--next');
+				rowPager.appendChild(pagerPrev);
+				rowPager.appendChild(pagerNext);
+
+				// add event listener to entire row
+				pagerPrev.addEventListener('click', pager, false);
+				pagerNext.addEventListener('click', pager, false);
+
+			// create select all
+			let instanceSelector = document.createElement('div');
+			instanceSelector.classList.add('row__button','row__button--instance');
+			rowControls.appendChild(instanceSelector);
+
+}
+
+
+
+
+// msgs from main code
+window.onmessage = async (event) => {
+	if (event.data.pluginMessage.type === 'pluginStart') {
+		//generate all of instance rows
+		instances = event.data.pluginMessage.instances;
+		instances.forEach(instance => {
+			generateInstanceRow(instance);
+		});
+
+	
+		// do the same for styles
+
+		// arrange default sort order on launch
+		countHeaders.forEach(header => {
+			let elem = header.querySelector('.table-header__text');
+			elem.click();
+		});
+	}
+}
+
+</script>
